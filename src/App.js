@@ -20,12 +20,13 @@ class HELLO extends Component {
 
 class TEXT extends Component {
   render() {
-    const showIfTrue = this.props.boolean ? 'Es cierto!' : 'Es falso!';
-    const showIfActivated = this.props.isActivated ? 'On!' : 'Off!';
-    const mappedNumbers = this.props.arrayOfNumbers.map(number => number * 2);
+    const { arrayOfNumbers, boolean, isActivated, multiply, number, text} = this.props;
+    const showIfTrue = boolean ? 'Es cierto!' : 'Es falso!';
+    const showIfActivated = isActivated ? 'On!' : 'Off!';
+    const mappedNumbers = arrayOfNumbers.map(multiply);
     return <div>
-      <h1>{this.props.text}</h1>
-      <p>{this.props.number}</p>
+      <h1>{text}</h1>
+      <p>{number}</p>
       <p>{showIfTrue}</p>
       <p>{showIfActivated}</p>
       <p>{mappedNumbers.join(', ')}</p>
@@ -43,6 +44,7 @@ function App() {
         <TEXT arrayOfNumbers= {[2, 4, 6]}
               boolean={false} 
               isActivated
+              multiply = {number => number * 3}
               number={2*2} 
               text="Soy un texto desde props :)"/>
         <a
