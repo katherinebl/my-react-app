@@ -20,11 +20,21 @@ class HELLO extends Component {
 
 class TEXT extends Component {
   render() {
-    const { arrayOfNumbers, boolean, isActivated, multiply, number, text} = this.props;
+    const { 
+      arrayOfNumbers, 
+      boolean, 
+      isActivated, 
+      multiply, 
+      number, 
+      text,
+      title
+    } = this.props;
+
     const showIfTrue = boolean ? 'Es cierto!' : 'Es falso!';
     const showIfActivated = isActivated ? 'On!' : 'Off!';
     const mappedNumbers = arrayOfNumbers.map(multiply);
     return <div>
+      {title}
       <h1>{text}</h1>
       <p>{number}</p>
       <p>{showIfTrue}</p>
@@ -40,13 +50,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <HELLO title="Hello from props :)"/>
+        <HELLO title="Hello :)"/>
         <TEXT arrayOfNumbers= {[2, 4, 6]}
               boolean={false} 
               isActivated
               multiply = {number => number * 3}
               number={2*2} 
-              text="Soy un texto desde props :)"/>
+              text="Soy un texto desde props :)"
+              title = {<h1>React element as prop</h1>} />
         <a
           className="App-link"
           href="https://reactjs.org"
