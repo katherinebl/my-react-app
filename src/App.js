@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import cars from './data/cars.json'
 import './App.css';
 
 
