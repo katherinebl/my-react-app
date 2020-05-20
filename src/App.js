@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ClickEvent from './sections/events'
 import './App.css';
 
 
@@ -24,8 +25,8 @@ class App extends Component {
     return (
       <div>
         <h4>Eventos</h4>
-        <button onClick={this.handleClick}>click me</button>
-        
+        {/* <button onClick={this.handleClick}>click me</button> */}
+        <ClickEvent />
       </div>
     );
   }
