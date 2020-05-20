@@ -16,21 +16,17 @@ import './App.css';
 
 
 class App extends Component {
-  render() {
 
+  handleClick() {
+    return alert('hi there');
+  }
+
+  render() {
     return (
       <div>
-        <h4>Listas de objetos</h4>
-        <ul> { cars.map(car => {
-                return (
-                  <li key={car.id}>
-                    <p><strong>Nombre: </strong>{car.name}</p>
-                    <p><strong>Marca: </strong>{car.company}</p>
-                  </li>
-                ) 
-              })
-            }
-        </ul>
+        <h4>Eventos</h4>
+        <button onClick={this.handleClick}>click me</button>
+        
       </div>
     );
   }
